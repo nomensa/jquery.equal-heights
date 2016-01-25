@@ -132,7 +132,7 @@ describe('equalHeights', function () {
     });
 
     describe('The public api', function() {
-        it('should reapply min-heights to the target elements when the rebuild method is called', function() {
+        it('should reapply min-heights to the target elements after a repeat initialisation', function() {
             testElement1
                 .find('.column-inner:nth-child(1)').height(350)
                 .find('.column-inner:nth-child(2)').height(250)
@@ -141,7 +141,9 @@ describe('equalHeights', function () {
                 breakpoint: '300'
             });
             testElement1.data('plugin_equalheights').destroy();
-            testElement1.data('plugin_equalheights').rebuild();
+            testElement1.equalheights({
+                breakpoint: '300'
+            });
             expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 350px');
         });
 
