@@ -141,9 +141,7 @@ describe('equalHeights', function () {
                 breakpoint: '300'
             });
             testElement1.data('plugin_equalheights').destroy();
-            testElement1.equalheights({
-                breakpoint: '300'
-            });
+            testElement1.data('plugin_equalheights').rebuild();
             expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 350px');
         });
 

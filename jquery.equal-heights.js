@@ -56,15 +56,23 @@
         init();
     }
 
+    // PUBLIC API
+    EqualHeights.prototype.rebuild = function() {
+    /*
+        rebuild the plugin and apply equal heights
+    */
+        return new EqualHeights(this.element, this.options);
+    };
+
+
     EqualHeights.prototype.destroy = function() {
     /*
      return the dom to it's original form
      */
-        $(this.options.target, this.element).each(function () {
+        return $(this.options.target, this.element).each(function () {
             $(this).css('min-height', '');
         });
 
-        this.element.removeData('plugin_' + pluginName);
     };
 
     $.fn[pluginName] = function (options) {
