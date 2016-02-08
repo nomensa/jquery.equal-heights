@@ -14,24 +14,17 @@
     background-color: #eee;
 }
 
-@media only screen and (min-width: 48.000em) {
-    .columns {
-        margin-left: -10px;
-        margin-right: -10px;
-    }
-
-    .column {
-        float: left;
-        width: 32%;
-    }
-
-
-
-    .column-box {
-        margin-left: 10px;
-        margin-right: 10px;
+.columns {
+    margin-left: -10px;
+    margin-right: -10px;
 }
 
-} /* end media */
+.column {
+    float: left;
+    width: 32%;
+}
 
-
+.column-box {
+    margin-left: 10px;
+    margin-right: 10px;
+}

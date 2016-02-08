@@ -65,7 +65,7 @@
 
             <div class="controls">
                 <button id="button-destroy">Destroy</button>
-                <button id="button-rebuild">Init</button>
+                <button id="button-rebuild">Rebuild</button>
             </div><!-- end controls -->
 
         </div><!-- .main -->
@@ -84,31 +84,26 @@
             $(document).ready( function(){
 
                 // Example A
-                $('.example-A .columns').equalheights({
+                $(".example-A .columns").equalheights({
                     target: '.column-box'
                 });
 
-                // Examples API
-                $('.api-examples .columns').equalheights({
+                // Public API Examples
+                var demo = {};
+                demo.equalheights = $('.api-examples .columns').equalheights({
                     target: '.column-box'
                 });
 
                 $('#button-rebuild').attr('disabled', 'disabled');
 
-                // Init
                 $('#button-rebuild').click(function () {
-                    $('.api-examples .columns').equalheights({
-                        target: '.column-box'
-                    });
-
+                    demo.equalheights.data('plugin_equalheights').rebuild();
                     $(this).attr('disabled', 'disabled');
                     $('#button-destroy').removeAttr('disabled');
                 });
 
-                // Destroy
                 $('#button-destroy').click(function () {
-                    $('.api-examples .columns').data('plugin_equalheights').destroy();
-
+                    demo.equalheights.data('plugin_equalheights').destroy();
                     $('#button-rebuild').removeAttr('disabled');
                     $(this).attr('disabled', 'disabled');
                 });
@@ -116,4 +111,3 @@
         </script>
     </body>
 </html>
-

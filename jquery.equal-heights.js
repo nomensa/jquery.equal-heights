@@ -3,7 +3,7 @@
  *
  * @description: Ensures the elements matched are the height of the highest element.
  * @source: http://github.com/nomensa/jquery.equal-heights
- * @version: '0.1.2'
+ * @version: '1.0.0'
  *
  * @author: Nomensa
  * @license: licenced under MIT - http://opensource.org/licenses/mit-license.php
@@ -16,8 +16,8 @@
 
     pluginName = 'equalheights';
     defaults = {
-        target: '.column-inner', // the target element to apply equal heights
-        breakpoint: '768' // A pixel value of the width of the window where the equal height should be applied
+        // The target element to apply equal heights
+        target: '.column-inner'
     };
 
     function EqualHeights(element, options) {
@@ -32,20 +32,16 @@
         self.target = self.element.find(self.options.target);
 
         function init() {
-            var windowWidth = $(window).width();
-            if (windowWidth > self.options.breakpoint) {
+            var maxHeight = 0;
 
-                var maxHeight = 0;
+            // Filter elements to find the highest one
+            self.target.each(function() {
+                if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height();
+                }
+            });
 
-                // Filter elements to find the highest one
-                self.target.each(function() {
-                    if ($(this).height() > maxHeight) {
-                        maxHeight = $(this).height();
-                    }
-                });
-
-                self.target.css({'min-height': maxHeight});
-            }
+            self.target.css({'min-height': maxHeight});
         }
 
         $(window).on('debouncedresize', function() {
@@ -56,15 +52,23 @@
         init();
     }
 
+    // PUBLIC API
+    EqualHeights.prototype.rebuild = function() {
+    /*
+        rebuild the plugin and apply equal heights
+    */
+        return new EqualHeights(this.element, this.options);
+    };
+
+
     EqualHeights.prototype.destroy = function() {
     /*
      return the dom to it's original form
      */
-        $(this.options.target, this.element).each(function () {
+        return $(this.options.target, this.element).each(function () {
             $(this).css('min-height', '');
         });
 
-        this.element.removeData('plugin_' + pluginName);
     };
 
     $.fn[pluginName] = function (options) {
