@@ -55,23 +55,12 @@ describe('equalHeights', function () {
 
     describe('The init function', function() {
 
-        it('should only add equal heights if the window width is great than the default breakpoint value (768px) wide', function() {
-            testElement1.equalheights();
-            testElement1
-                .find('.column-inner:nth-child(1)').height(330)
-                .find('.column-inner:nth-child(2)').height(250)
-                .find('.column-inner:nth-child(3)').height(276);
-            expect(testElement1.find('.column-inner').attr('style')).not.toMatch(/min-height: 300px/);
-        });
-
         it('sets a style attribute with a min-height value on each target element', function() {
             testElement1
                 .find('.column-inner:nth-child(1)').height(330)
                 .find('.column-inner:nth-child(2)').height(250)
                 .find('.column-inner:nth-child(3)').height(276);
-            testElement1.equalheights({
-                breakpoint: '300'
-            });
+            testElement1.equalheights();
             expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 330px');
         });
 
@@ -101,9 +90,7 @@ describe('equalHeights', function () {
                 .find('.column-inner:nth-child(1)').height(350)
                 .find('.column-inner:nth-child(2)').height(250)
                 .find('.column-inner:nth-child(3)').height(276);
-            testElement1.equalheights({
-                breakpoint: '300'
-            });
+            testElement1.equalheights();
             $(window).trigger('debouncedresize');
             expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 350px');
         });
@@ -117,18 +104,6 @@ describe('equalHeights', function () {
             });
             expect(testElement1.find('div').hasClass('column-inner')).toBe(true);
         });
-
-        it('should not apply equal heights if the window width is below the breakpoint value that was supplied', function() {
-            testElement1
-                .find('.column-inner:nth-child(1)').height(330)
-                .find('.column-inner:nth-child(2)').height(250)
-                .find('.column-inner:nth-child(3)').height(276);
-            testElement1.equalheights({
-                breakpoint: '300'
-            });
-            expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 330px');
-        });
-
     });
 
     describe('The public api', function() {
@@ -137,9 +112,7 @@ describe('equalHeights', function () {
                 .find('.column-inner:nth-child(1)').height(350)
                 .find('.column-inner:nth-child(2)').height(250)
                 .find('.column-inner:nth-child(3)').height(276);
-            testElement1.equalheights({
-                breakpoint: '300'
-            });
+            testElement1.equalheights();
             testElement1.data('plugin_equalheights').destroy();
             testElement1.data('plugin_equalheights').rebuild();
             expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 350px');
@@ -150,9 +123,7 @@ describe('equalHeights', function () {
                 .find('.column-inner:nth-child(1)').height(350)
                 .find('.column-inner:nth-child(2)').height(250)
                 .find('.column-inner:nth-child(3)').height(276);
-            testElement1.equalheights({
-                breakpoint: '300'
-            });
+            testElement1.equalheights();
             testElement1.data('plugin_equalheights').destroy();
             expect(testElement1.find('.column-inner').attr('style')).not.toContain('min-height: 350px');
         });

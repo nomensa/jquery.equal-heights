@@ -25,12 +25,6 @@ Type: `string`
 Default: 'column-inner'
 Description: The class name of the element to apply equal heights
 
-### breakpoint
-
-Type: `integer`
-Default: '768'
-Description: A pixel value of the width of the window where the equal height should be applied
-
 
 ## Public API
 
@@ -50,8 +44,7 @@ Description: Returns the DOM to it's original state
 ```javascript
 $(function() {
     $('.box').equalheights({
-        target: 'column-inner',
-        breakpoint: '768'
+        target: 'column-inner'
     });
 });
 ```

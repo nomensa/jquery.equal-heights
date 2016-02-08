@@ -16,8 +16,8 @@
 
     pluginName = 'equalheights';
     defaults = {
-        target: '.column-inner', // the target element to apply equal heights
-        breakpoint: '768' // A pixel value of the width of the window where the equal height should be applied
+        // The target element to apply equal heights
+        target: '.column-inner'
     };
 
     function EqualHeights(element, options) {
@@ -32,20 +32,16 @@
         self.target = self.element.find(self.options.target);
 
         function init() {
-            var windowWidth = $(window).width();
-            if (windowWidth > self.options.breakpoint) {
+            var maxHeight = 0;
 
-                var maxHeight = 0;
+            // Filter elements to find the highest one
+            self.target.each(function() {
+                if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height();
+                }
+            });
 
-                // Filter elements to find the highest one
-                self.target.each(function() {
-                    if ($(this).height() > maxHeight) {
-                        maxHeight = $(this).height();
-                    }
-                });
-
-                self.target.css({'min-height': maxHeight});
-            }
+            self.target.css({'min-height': maxHeight});
         }
 
         $(window).on('debouncedresize', function() {
