@@ -1,6 +1,6 @@
 {
     "name": "jquery-equal-heights",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "description": "Ensures the elements matched are the height of the highest element.",
     "author": "Nomensa <tech@nomensa.com>",
     "repository": {

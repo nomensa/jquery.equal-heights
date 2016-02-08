@@ -104,6 +104,7 @@ $ grunt
 
 ## Release history
 
+ - 1.0.0 Removed breakpoint option
  - 0.1.2 Improved flexibility of 'target' option
  - 0.1.1 Updated destroy function to remove 'min-height' attribute
  - 0.1.0 Tagged stable version for release
