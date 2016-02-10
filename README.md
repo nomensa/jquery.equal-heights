@@ -44,7 +44,7 @@ Description: Returns the DOM to it's original state
 ```javascript
 $(function() {
     $('.box').equalheights({
-        target: 'column-inner'
+        target: '.column-inner'
     });
 });
 ```
