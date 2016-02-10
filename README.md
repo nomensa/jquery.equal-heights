@@ -2,6 +2,7 @@
 
 Ensures the elements matched are the height of the highest element.
 
+
 ## Usage
 
 To get started you can either:
@@ -16,6 +17,7 @@ Then it's just a case of including the following scripts on your page, best at t
   <script src="jquery.debouncedresize.js"></script>
   <script src="jquery.equal-heights.min.js"></script>
 ```
+
 
 ## Options & Defaults
 
@@ -48,6 +50,7 @@ $(function() {
     });
 });
 ```
+
 
 ## Development
 
@@ -89,7 +92,8 @@ Running grunt (with watcher) will watch for any changes and recompile - best use
 $ grunt
 ```
 
-##Tested browsers
+
+## Tested browsers
 
  - Firefox 3.5.19;
  - Firefox 23.0.1;
@@ -100,14 +104,6 @@ $ grunt
  - Internet Explorer 8;
  - Internet Explorer 7;
  - Opera 12.16.
-
-
-## Release history
-
- - 1.0.0 Removed breakpoint option
- - 0.1.2 Improved flexibility of 'target' option
- - 0.1.1 Updated destroy function to remove 'min-height' attribute
- - 0.1.0 Tagged stable version for release
 
 Copyright &copy; 2014 [@nomensa](http://nomensa.com)
 

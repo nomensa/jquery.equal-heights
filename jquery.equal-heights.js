@@ -3,7 +3,7 @@
  *
  * @description: Ensures the elements matched are the height of the highest element.
  * @source: http://github.com/nomensa/jquery.equal-heights
- * @version: '1.0.0'
+ * @version: '1.0.1'
  *
  * @author: Nomensa
  * @license: licenced under MIT - http://opensource.org/licenses/mit-license.php
