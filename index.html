@@ -65,7 +65,7 @@
 
             <div class="controls">
                 <button id="button-destroy">Destroy</button>
-                <button id="button-rebuild">Rebuild</button>
+                <button id="button-init">Init</button>
             </div><!-- end controls -->
 
         </div><!-- .main -->
@@ -78,7 +78,6 @@
 
         <!-- Plugin scripts -->
         <script src="gh-pages/js/vendor/jquery/1.10.2/jquery.min.js"></script>
-        <script src="gh-pages/js/vendor/jquery-smartresize/jquery.debouncedresize.js"></script>
         <script src="jquery.equal-heights.js"></script>
         <script>
             $(document).ready( function(){
@@ -94,17 +93,19 @@
                     target: '.column-box'
                 });
 
-                $('#button-rebuild').attr('disabled', 'disabled');
+                $('#button-init').attr('disabled', 'disabled');
 
-                $('#button-rebuild').click(function () {
-                    demo.equalheights.data('plugin_equalheights').rebuild();
+                $('#button-init').click(function () {
+                    demo.equalheights = $('.api-examples .columns').equalheights({
+                        target: '.column-box'
+                    });
                     $(this).attr('disabled', 'disabled');
                     $('#button-destroy').removeAttr('disabled');
                 });
 
                 $('#button-destroy').click(function () {
                     demo.equalheights.data('plugin_equalheights').destroy();
-                    $('#button-rebuild').removeAttr('disabled');
+                    $('#button-init').removeAttr('disabled');
                     $(this).attr('disabled', 'disabled');
                 });
             });

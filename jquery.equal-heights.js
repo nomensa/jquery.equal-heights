@@ -3,7 +3,7 @@
  *
  * @description: Ensures the elements matched are the height of the highest element.
  * @source: http://github.com/nomensa/jquery.equal-heights
- * @version: '1.0.1'
+ * @version: '2.0.0'
  *
  * @author: Nomensa
  * @license: licenced under MIT - http://opensource.org/licenses/mit-license.php
@@ -44,28 +44,17 @@
             self.target.css({'min-height': maxHeight});
         }
 
-        $(window).on('debouncedresize', function() {
-            self.destroy();
-            init();
-        });
-
         init();
     }
-
-    // PUBLIC API
-    EqualHeights.prototype.rebuild = function() {
-    /*
-        rebuild the plugin and apply equal heights
-    */
-        return new EqualHeights(this.element, this.options);
-    };
-
 
     EqualHeights.prototype.destroy = function() {
     /*
      return the dom to it's original form
      */
-        return $(this.options.target, this.element).each(function () {
+        // Remove data
+        $(this.element).removeData('plugin_' + pluginName);
+
+        $(this.options.target, this.element).each(function () {
             $(this).css('min-height', '');
         });
 

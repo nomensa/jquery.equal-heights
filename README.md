@@ -14,7 +14,6 @@ Then it's just a case of including the following scripts on your page, best at t
 
 ```html
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="jquery.debouncedresize.js"></script>
   <script src="jquery.equal-heights.min.js"></script>
 ```
 
