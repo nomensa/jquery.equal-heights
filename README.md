@@ -14,7 +14,6 @@ Then it's just a case of including the following scripts on your page, best at t
 
 ```html
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="jquery.debouncedresize.js"></script>
   <script src="jquery.equal-heights.min.js"></script>
 ```
 
@@ -29,10 +28,6 @@ Description: The class name of the element to apply equal heights
 
 
 ## Public API
-
-### Rebuild
-
-Description: Re-initialises the plugin
 
 ### Destroy
 
@@ -59,7 +54,6 @@ This plugin requires:
 [node.js](http://nodejs.org/) `~0.10.x`
 [Grunt](http://gruntjs.com/) `~0.4.0`
 [jQuery](http://jquery.com) `~v1.9.x`
-[jQuery SmartResize](https://github.com/louisremi/jquery-smartresize)
 
 ### Node
 First time setup of this plugin will require the node packages to be installed. On Windows use the command prompt with Ruby or on a Mac use terminal, install the global node.js packages:

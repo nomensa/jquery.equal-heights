@@ -84,16 +84,6 @@ describe('equalHeights', function () {
             testElement2.equalheights();
             expect(testElement2.find('.column-inner').length).toBe(0);
         });
-
-        it('should call the destroy method and the init method when the browser window is resized', function() {
-            testElement1
-                .find('.column-inner:nth-child(1)').height(350)
-                .find('.column-inner:nth-child(2)').height(250)
-                .find('.column-inner:nth-child(3)').height(276);
-            testElement1.equalheights();
-            $(window).trigger('debouncedresize');
-            expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 350px');
-        });
     });
 
     describe('The plugin options', function() {
@@ -107,24 +97,15 @@ describe('equalHeights', function () {
     });
 
     describe('The public api', function() {
-        it('should reapply min-heights to the target elements after a repeat initialisation', function() {
-            testElement1
-                .find('.column-inner:nth-child(1)').height(350)
-                .find('.column-inner:nth-child(2)').height(250)
-                .find('.column-inner:nth-child(3)').height(276);
-            testElement1.equalheights();
-            testElement1.data('plugin_equalheights').destroy();
-            testElement1.data('plugin_equalheights').rebuild();
-            expect(testElement1.find('.column-inner').attr('style')).toContain('min-height: 350px');
-        });
 
-        it('should return the dom to it\'s original form when the destroy method is called', function() {
+        it('should return the dom to its original form when the destroy method is called', function() {
             testElement1
                 .find('.column-inner:nth-child(1)').height(350)
                 .find('.column-inner:nth-child(2)').height(250)
                 .find('.column-inner:nth-child(3)').height(276);
             testElement1.equalheights();
             testElement1.data('plugin_equalheights').destroy();
+            expect(typeof testElement1.data('plugin_equalheights')).toBe('undefined');
             expect(testElement1.find('.column-inner').attr('style')).not.toContain('min-height: 350px');
         });
     });
