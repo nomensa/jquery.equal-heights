@@ -65,7 +65,6 @@
 
             <div class="controls">
                 <button id="button-destroy">Destroy</button>
-                <button id="button-init">Init</button>
             </div><!-- end controls -->
 
         </div><!-- .main -->
@@ -93,20 +92,8 @@
                     target: '.column-box'
                 });
 
-                $('#button-init').attr('disabled', 'disabled');
-
-                $('#button-init').click(function () {
-                    demo.equalheights = $('.api-examples .columns').equalheights({
-                        target: '.column-box'
-                    });
-                    $(this).attr('disabled', 'disabled');
-                    $('#button-destroy').removeAttr('disabled');
-                });
-
                 $('#button-destroy').click(function () {
                     demo.equalheights.data('plugin_equalheights').destroy();
-                    $('#button-init').removeAttr('disabled');
-                    $(this).attr('disabled', 'disabled');
                 });
             });
         </script>
