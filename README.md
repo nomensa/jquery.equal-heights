@@ -29,10 +29,6 @@ Description: The class name of the element to apply equal heights
 
 ## Public API
 
-### Rebuild
-
-Description: Re-initialises the plugin
-
 ### Destroy
 
 Description: Returns the DOM to it's original state
