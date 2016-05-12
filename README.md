@@ -2,6 +2,7 @@
 
 Ensures the elements matched are the height of the highest element.
 
+
 ## Usage
 
 To get started you can either:
@@ -13,9 +14,9 @@ Then it's just a case of including the following scripts on your page, best at t
 
 ```html
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="jquery.debouncedresize.js"></script>
   <script src="jquery.equal-heights.min.js"></script>
 ```
+
 
 ## Options & Defaults
 
@@ -27,10 +28,6 @@ Description: The class name of the element to apply equal heights
 
 
 ## Public API
-
-### Rebuild
-
-Description: Re-initialises the plugin
 
 ### Destroy
 
@@ -44,10 +41,11 @@ Description: Returns the DOM to it's original state
 ```javascript
 $(function() {
     $('.box').equalheights({
-        target: 'column-inner'
+        target: '.column-inner'
     });
 });
 ```
+
 
 ## Development
 
@@ -56,7 +54,6 @@ This plugin requires:
 [node.js](http://nodejs.org/) `~0.10.x`
 [Grunt](http://gruntjs.com/) `~0.4.0`
 [jQuery](http://jquery.com) `~v1.9.x`
-[jQuery SmartResize](https://github.com/louisremi/jquery-smartresize)
 
 ### Node
 First time setup of this plugin will require the node packages to be installed. On Windows use the command prompt with Ruby or on a Mac use terminal, install the global node.js packages:
@@ -89,7 +86,8 @@ Running grunt (with watcher) will watch for any changes and recompile - best use
 $ grunt
 ```
 
-##Tested browsers
+
+## Tested browsers
 
  - Firefox 3.5.19;
  - Firefox 23.0.1;
@@ -100,14 +98,6 @@ $ grunt
  - Internet Explorer 8;
  - Internet Explorer 7;
  - Opera 12.16.
-
-
-## Release history
-
- - 1.0.0 Removed breakpoint option
- - 0.1.2 Improved flexibility of 'target' option
- - 0.1.1 Updated destroy function to remove 'min-height' attribute
- - 0.1.0 Tagged stable version for release
 
 Copyright &copy; 2014 [@nomensa](http://nomensa.com)
 
