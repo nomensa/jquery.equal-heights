@@ -105,6 +105,6 @@ $ grunt
  - Internet Explorer 7;
  - Opera 12.16.
 
-Copyright &copy; 2014 [@nomensa](http://nomensa.com)
+Copyright &copy; 2017 [@nomensa](http://nomensa.com)
 
 Licensed under [MIT](http://opensource.org/licenses/mit-license.php)
