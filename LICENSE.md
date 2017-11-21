@@ -1,4 +1,4 @@
-Copyright (c) 2013 Nomensa
+Copyright (c) 2017 Nomensa
 
 MIT License
 

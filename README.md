@@ -47,6 +47,12 @@ $(function() {
 ```
 
 
+## Running
+We use `http-server` to serve the demo page:
+```bash
+$ http-server
+```
+
 ## Development
 
 This plugin requires:
